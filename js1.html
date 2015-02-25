@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<title>js test</title>
+		<script src="assets/js/vendor/jquery.min.js"></script>
+		<style>
+			#hello{
+				width: 300px;
+				height: 100px;
+				/*background-color: yellow;*/
+				color: blue;
+				padding: 10px;
+				margin: 5px;
+			}
+			.world{
+				width: 150px;
+				height: 200px;
+				background-color: red;
+				color: green;
+			}
+			.centerDiv{
+				height: 300px;
+				width: 100%	;
+				background-color: #f4f4f4;
+				/*border: 1px solid #ccc;
+				margin: 10px;
+				padding: 10px;*/
+				display: table;
+			}
+			.centerP{
+				text-align: center;
+				margin-top: 60px;
+				display: table-cell;
+				vertical-align: middle;
+				padding: auto 300px;
+			}
+			div.centerDiv.diff p.centerP{
+
+			}
+			p.centerP, p.left{
+				color: red;
+			}
+			*{
+				font-size: 30px;
+			}
+			div.centerDiv + p{
+				background-color: purple;
+				font-size: 50px;
+			}
+
+			div.centerDiv ~ p{
+				background-color: blue;
+				font-size: 50px;
+			}
+			a[title='google.com']{
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="hello">
+			<span>hello world</span> <span>another span</span>
+		</div>
+
+		<div class="world">
+			this is Akshay!
+		</div>
+
+		<div class="centerDiv diff">
+			<p class="centerP">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the <strong class="bold">1500s</strong>, when an unknown printke a type specimen book. It has survived n </p>
+		</div>
+
+		<p class="left">er took a galley of type and scrambled it to ma</p>
+
+		<p class="preced2">er took a galley </p>
+
+		<a href="https://google.com" title="google.com">here</a>		
+
+		<a href="https://facebook.com" title="facebook.com">here</a>
+		<script>
+			/**
+			 * feature 1: manipulating the css properties
+			 */
+			$("div.centerDiv.diff p.centerP").css('color', 'yellow');
+
+			/**
+			 * feature 2: event-driven(click, load, drag, keypress, keyup, keydown etc.)
+			 */
+			$(window).load(function() {
+				$("div.world").on('click', function (event) {
+					$(this).hide();
+				});	
+			});
+
+
+		</script>
+	</body>
+</html>
